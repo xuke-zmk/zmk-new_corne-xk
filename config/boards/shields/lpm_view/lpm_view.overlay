@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-&lpm_view_spi {
+&spi0 {
     status = "okay";
     lpm_view: lcd@0 {
         compatible = "jdi,lpm009m360a";
