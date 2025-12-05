@@ -16,13 +16,6 @@
     model = "eyelash_corne";
     compatible = "eyelashperipherals,eyelash_corne";
 
-lpm_view_spi: &spi1 {
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi1_default>;
-    pinctrl-1 = <&spi1_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
-};
 
     chosen {
         zephyr,code-partition = &code_partition;
@@ -198,6 +191,14 @@ zephyr_udc0: &usbd {
             low-power-enable;
         };
     };
+};
+
+lpm_view_spi: &spi1 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
 };
 
 &pwm0 {
